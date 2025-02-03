@@ -13,12 +13,16 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
 
+		public bool golpe;
+
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
+
+		public bool disablemovement = false;
 
 #if ENABLE_INPUT_SYSTEM
 		public void OnMove(InputValue value)
@@ -43,6 +47,11 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
+
+		public void OnGolpe(InputValue value)
+		{
+			GolpeInput(value.isPressed);
+		}
 #endif
 
 
@@ -64,6 +73,14 @@ namespace StarterAssets
 		public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
+		}
+
+		public void GolpeInput(bool newGolpeState)
+		{
+			if(newGolpeState){
+				golpe = !golpe;
+				disablemovement = golpe;
+			}
 		}
 
 		private void OnApplicationFocus(bool hasFocus)

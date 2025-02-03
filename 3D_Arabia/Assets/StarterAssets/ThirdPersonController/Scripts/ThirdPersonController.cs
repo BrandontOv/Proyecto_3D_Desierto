@@ -97,6 +97,7 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private int _animIDGolpe;
 
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
@@ -159,6 +160,7 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            Golpe();
         }
 
         private void LateUpdate()
@@ -173,6 +175,7 @@ namespace StarterAssets
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+            _animIDGolpe= Animator.StringToHash("Golpe");
         }
 
         private void GroundedCheck()
@@ -348,6 +351,18 @@ namespace StarterAssets
             }
         }
 
+        public void  Golpe()
+{
+
+        if(_hasAnimator){
+
+        if(_input.golpe){
+
+            _animator.SetTrigger(_animIDGolpe);
+            _input.golpe =false;
+        }
+        }
+}
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
         {
             if (lfAngle < -360f) lfAngle += 360f;
