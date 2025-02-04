@@ -193,6 +193,8 @@ namespace StarterAssets
             }
         }
 
+        
+
         private void CameraRotation()
         {
             // if there is an input and camera position is not fixed
@@ -216,6 +218,12 @@ namespace StarterAssets
 
         private void Move()
         {
+
+            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Golpe Espada") )
+            {
+                _speed = 0f;
+                return;
+            } 
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
