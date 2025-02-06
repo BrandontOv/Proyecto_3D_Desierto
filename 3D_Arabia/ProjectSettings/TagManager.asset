@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CinemachineTarget
   - Chile
+  - Enemy
+  - Arma
   layers:
   - Default
   - TransparentFX

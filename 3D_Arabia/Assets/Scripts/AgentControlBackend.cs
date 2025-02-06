@@ -1,7 +1,8 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AgentControl : MonoBehaviour
+public class AgentControlBackend : MonoBehaviour
 {
     NavMeshAgent agent; 
     [SerializeField] GameObject[] path; 
@@ -15,10 +16,14 @@ public class AgentControl : MonoBehaviour
     [SerializeField] GameObject Vampiro;
 
     [SerializeField] Animator anim;
+
+    [SerializeField] GameObject cabeza;
     float distance;
     float ataque;
     bool follow = false;
-    bool Siguiendo = false;  
+    bool Siguiendo = false; 
+
+    public int vida = 3;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,6 +37,10 @@ public class AgentControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(vida >0){
+
+        
+
         distance = Vector3.Distance(transform.position, 
                             player.transform.position);
 
@@ -76,6 +85,28 @@ public class AgentControl : MonoBehaviour
             anim.SetBool("Siguiendo", false);
         }
     }
+
+    if(vida <=0)
+    {
+        anim.SetTrigger("Muerte");
+        Invoke("destru",5);
+    }
+}
+public void damagevamp () {
+
+vida --;
+Debug.Log("recibedaño");
+
+}
+public void destru(){
+    Destroy(gameObject);
+    Debug.Log("se deberia destruir");
+}
+
+public void desactivar(){
+
+    cabeza.SetActive(false);
+}
 
 
 }
