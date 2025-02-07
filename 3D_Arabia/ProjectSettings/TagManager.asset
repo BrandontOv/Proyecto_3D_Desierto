@@ -8,6 +8,7 @@ TagManager:
   - Chile
   - Enemy
   - Arma
+  - Cabeza
   layers:
   - Default
   - TransparentFX

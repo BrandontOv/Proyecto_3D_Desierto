@@ -18,6 +18,8 @@ public class AgentControlBackend : MonoBehaviour
     [SerializeField] Animator anim;
 
     [SerializeField] GameObject cabeza;
+
+    [SerializeField] ParticleSystem quemado;
     float distance;
     float ataque;
     bool follow = false;
@@ -108,5 +110,13 @@ public void desactivar(){
     cabeza.SetActive(false);
 }
 
+public void arder(){
+
+    Debug.Log("Se quema");
+    vida =0;
+    anim.SetTrigger("Muerte");
+    Invoke("destru",5);
+    quemado.Play();
+}
 
 }

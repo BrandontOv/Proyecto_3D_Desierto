@@ -8,6 +8,10 @@ public class FireControll : MonoBehaviour
     [SerializeField] GameObject chile;
 
     [SerializeField] GameObject chileUI;
+
+    [SerializeField] Collider machete;
+
+    [SerializeField] GameObject areafuego;
     public bool aliento;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,6 +31,7 @@ public class FireControll : MonoBehaviour
             
             fire.Play();
             Invoke("detener",4);
+            areafuego.SetActive(true);
             
 
         }
@@ -40,16 +45,28 @@ public class FireControll : MonoBehaviour
         fire.Stop();
         aliento = false;
         chileUI.SetActive(false);
+        areafuego.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other){
 
-        if(other.gameObject.tag=="Chile"){
+        if(other.gameObject.tag=="Chile" && !aliento){
 
             aliento=true;
         }
 
 
+    }
 
+    public void act(){
+
+        machete.enabled =true;
+
+
+    }
+
+    public void desact(){
+
+        machete.enabled = false;
     }
 }

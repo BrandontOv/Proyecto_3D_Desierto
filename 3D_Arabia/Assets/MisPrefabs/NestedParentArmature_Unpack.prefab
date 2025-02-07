@@ -323,6 +323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Falcata
       objectReference: {fileID: 0}
+    - target: {fileID: 5266661931027147030, guid: 39b95f1fe55d0ba4facb1964039fb055, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -331,6 +335,11 @@ PrefabInstance:
 --- !u!4 &1013895800243737145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2498736577122735432, guid: 39b95f1fe55d0ba4facb1964039fb055, type: 3}
+  m_PrefabInstance: {fileID: 3224400820080789361}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7325578035302166119 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 5266661931027147030, guid: 39b95f1fe55d0ba4facb1964039fb055, type: 3}
   m_PrefabInstance: {fileID: 3224400820080789361}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4687803078656551506
@@ -766,7 +775,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7648245147605186316}
+    - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3075718049433325947}
+    - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8591383846981058405}
+    - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3135393914996835557}
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+--- !u!95 &2722252441011428760 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6982812146204527121, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+  m_PrefabInstance: {fileID: 4981135714430277513}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3934603879535436804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8338988566280778637, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
@@ -797,7 +820,64 @@ MonoBehaviour:
   fire: {fileID: 1391819499311715710}
   chile: {fileID: 0}
   chileUI: {fileID: 0}
+  machete: {fileID: 7325578035302166119}
   aliento: 0
+--- !u!114 &3075718049433325947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8677484666063723864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11721b9d5e25a8b46b1292020cdcf5fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 8677484666063723864}
+  anim: {fileID: 2722252441011428760}
+  item1: 0
+  item2: 0
+  item3: 0
+  item4: 0
+  item5: 0
+  prueba: 3
+--- !u!65 &8591383846981058405
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8677484666063723864}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6088934, y: 1.6775813, z: 0.6438625}
+  m_Center: {x: -0.026762009, y: 1.0107057, z: -0.01134932}
+--- !u!114 &3135393914996835557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8677484666063723864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed14bbf597842748b818147222ff91c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barravida: {fileID: 0}
+  vida: 100
+  dps: 10
 --- !u!1001 &6546761480463998124
 PrefabInstance:
   m_ObjectHideFlags: 0
