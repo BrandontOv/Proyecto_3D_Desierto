@@ -9,6 +9,11 @@ TagManager:
   - Enemy
   - Arma
   - Cabeza
+  - Tomate
+  - Car
+  - Lechu
+  - Tortilla
+  - Salsa
   layers:
   - Default
   - TransparentFX

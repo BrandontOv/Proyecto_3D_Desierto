@@ -34,6 +34,7 @@ public class AgentControlBackend : MonoBehaviour
       
         agent.destination = path[goal].transform.position;
 
+        quemado.Stop();
     }
 
     // Update is called once per frame
@@ -112,11 +113,13 @@ public void desactivar(){
 
 public void arder(){
 
+    quemado.Play();
     Debug.Log("Se quema");
     vida =0;
     anim.SetTrigger("Muerte");
     Invoke("destru",5);
-    quemado.Play();
+    Vampiro.GetComponent<NavMeshAgent>().speed = 0;
+    
 }
 
 }

@@ -1,12 +1,19 @@
 using StarterAssets;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ControllerPlayer : MonoBehaviour
 {
     [SerializeField] GameObject Player;
     [SerializeField] Animator anim;
+
+    [SerializeField] GameObject item1T;
+    [SerializeField] GameObject item2T;
+    [SerializeField] GameObject item3T;
+    [SerializeField] GameObject item4T;
+    [SerializeField] GameObject item5T;
 
     [SerializeField] bool item1;
 
@@ -48,9 +55,57 @@ public class ControllerPlayer : MonoBehaviour
 
             Player.GetOrAddComponent<ThirdPersonController>().MoveSpeed =0;
 
+            Invoke("Credit",3);
+
         }
         
     }
 
+    void OnTriggerEnter(Collider other){
 
+
+        if(other.gameObject.tag =="Lechu"){
+
+            Debug.Log("item1 listo");
+            Destroy(item1T);
+            item1 = true;
+
+        }
+
+        if(other.gameObject.tag =="Car"){
+
+            Debug.Log("item2 listo");
+           Destroy(item2T);
+            item2 = true;
+        }
+
+        if(other.gameObject.tag =="Tortilla"){
+
+            Debug.Log("item3 listo");
+           Destroy(item3T);
+            item3 = true;
+
+        }
+
+        if(other.gameObject.tag =="Salsa"){
+
+            Debug.Log("item4 listo");
+           Destroy(item4T);
+            item4 = true;
+        }
+
+        if(other.gameObject.tag =="Tomate"){
+
+            Debug.Log("item5 listo");
+           Destroy(item5T);
+           item5 = true;
+
+        }
+    } 
+
+    void Credit(){
+
+        SceneManager.LoadScene("Creditos");
+        Debug.Log("Se cargaron los creditos");
+    }
 }

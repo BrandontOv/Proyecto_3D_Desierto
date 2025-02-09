@@ -23,6 +23,7 @@ public class VampiroDamage : MonoBehaviour
     if(other.gameObject.tag=="Enemy"){
 
         Vampiro.GetComponent<AgentControlBackend>().arder();
+        Debug.Log("Lo intenta llamar");
     }
  }
 
