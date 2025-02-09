@@ -43,6 +43,12 @@ public class PlayerHealth : MonoBehaviour
             barravida.value = vida;
 
         }
+
+        if (other.gameObject.tag =="Salud"){
+
+            vida=100;
+            Destroy(other);
+        }
     } 
 
     void Muerte(){
@@ -50,6 +56,7 @@ public class PlayerHealth : MonoBehaviour
         Invoke("stop",2);
         anim.SetTrigger("Murision");
         Personaje.GetComponent<ThirdPersonController>().MoveSpeed =0;
+        
         
     }
 

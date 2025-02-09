@@ -380,6 +380,7 @@ MonoBehaviour:
   anim: {fileID: 1675403328932027132}
   cabeza: {fileID: 4767687767964908752}
   quemado: {fileID: 3746203801700407520}
+  Aguacate: {fileID: 7202254232504877365, guid: 8a2cf5d7d6b863b4fab2bcc83bdbbc14, type: 3}
   vida: 3
 --- !u!54 &6524274776594699192
 Rigidbody:

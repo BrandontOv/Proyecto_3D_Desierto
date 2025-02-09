@@ -20,6 +20,8 @@ public class AgentControlBackend : MonoBehaviour
     [SerializeField] GameObject cabeza;
 
     [SerializeField] ParticleSystem quemado;
+
+    [SerializeField] GameObject Aguacate;
     float distance;
     float ataque;
     bool follow = false;
@@ -93,6 +95,7 @@ public class AgentControlBackend : MonoBehaviour
     {
         anim.SetTrigger("Muerte");
         Invoke("destru",5);
+        Instantiate(Aguacate, transform.position, transform.rotation);
     }
 }
 public void damagevamp () {
@@ -102,6 +105,7 @@ Debug.Log("recibedaño");
 
 }
 public void destru(){
+
     Destroy(gameObject);
     Debug.Log("se deberia destruir");
 }
@@ -111,8 +115,14 @@ public void desactivar(){
     cabeza.SetActive(false);
 }
 
+public void curar(){
+
+    Instantiate(Aguacate, transform.position, transform.rotation);
+}
+
 public void arder(){
 
+    Instantiate(Aguacate, transform.position, transform.rotation);
     quemado.Play();
     Debug.Log("Se quema");
     vida =0;
