@@ -343,7 +343,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5000001
-  m_Speed: 3.5
+  m_Speed: 0
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -381,7 +381,7 @@ MonoBehaviour:
   cabeza: {fileID: 4767687767964908752}
   quemado: {fileID: 3746203801700407520}
   Aguacate: {fileID: 7202254232504877365, guid: 8a2cf5d7d6b863b4fab2bcc83bdbbc14, type: 3}
-  vida: 3
+  vida: 0
 --- !u!54 &6524274776594699192
 Rigidbody:
   m_ObjectHideFlags: 0

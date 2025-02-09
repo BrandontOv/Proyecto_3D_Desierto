@@ -27,7 +27,7 @@ public class AgentControlBackend : MonoBehaviour
     bool follow = false;
     bool Siguiendo = false; 
 
-    public int vida = 3;
+    public int vida = 4;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
