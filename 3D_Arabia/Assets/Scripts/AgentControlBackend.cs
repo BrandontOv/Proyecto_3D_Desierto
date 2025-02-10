@@ -29,6 +29,10 @@ public class AgentControlBackend : MonoBehaviour
 
     public int vida = 4;
 
+
+    bool ardido = false; 
+
+    bool morto = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -61,9 +65,10 @@ public class AgentControlBackend : MonoBehaviour
         }
 
         if(distance<= visionAtaque){
-
+             //transform.LookAt(player.transform.position);
             anim.SetBool("Cabeza", true);
-            Vampiro.GetComponent<NavMeshAgent>().speed = 0;
+            Vampiro.GetComponent<NavMeshAgent>().speed = 0.2f;
+            
             
         }
         else{
@@ -91,11 +96,11 @@ public class AgentControlBackend : MonoBehaviour
         }
     }
 
-    if(vida <=0)
+    if(vida <=0 && !morto)
     {
+        morto = true;
         anim.SetTrigger("Muerte");
         Invoke("destru",5);
-        Instantiate(Aguacate, transform.position, transform.rotation);
     }
 }
 public void damagevamp () {
@@ -105,7 +110,7 @@ Debug.Log("recibedaño");
 
 }
 public void destru(){
-
+    Invoke("curar",0);
     Destroy(gameObject);
     Debug.Log("se deberia destruir");
 }
@@ -122,7 +127,7 @@ public void curar(){
 
 public void arder(){
 
-    Instantiate(Aguacate, transform.position, transform.rotation);
+    Invoke("curar",0);
     quemado.Play();
     Debug.Log("Se quema");
     vida =0;
@@ -131,5 +136,14 @@ public void arder(){
     Vampiro.GetComponent<NavMeshAgent>().speed = 0;
     
 }
+
+ void OnTriggerEnter(Collider other){
+
+    if(other.gameObject.tag=="Fireball" && !ardido){
+        ardido = true; 
+        Debug.Log("Me Quemo");
+        Invoke("arder",0);
+    }
+ }
 
 }

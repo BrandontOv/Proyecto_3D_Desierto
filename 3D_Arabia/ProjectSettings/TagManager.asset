@@ -15,11 +15,7 @@ TagManager:
   - Tortilla
   - Salsa
   - Salud
-  - Enemy1
-  - Enemy2
-  - Enemy3
-  - Enemy4
-  - Enemy5
+  - Fireball
   layers:
   - Default
   - TransparentFX

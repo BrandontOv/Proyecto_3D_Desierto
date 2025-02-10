@@ -1,16 +1,46 @@
+using StarterAssets;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    [SerializeField] GameObject MenuP;
+    [SerializeField] ThirdPersonController thirdPersonController;
+
+    public void conti()
     {
-        
+        MenuP.SetActive(false);
+        Time.timeScale = 1;
+
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void resta()
     {
-        
+
+        SceneManager.LoadScene("lvl1");
     }
+
+    public void next()
+    {
+
+        SceneManager.LoadScene("lvl1");
+    }
+
+    public void main()
+    {
+
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void Credits()
+    {
+
+        SceneManager.LoadScene("Creditos");
+    }
+
+
+
 }

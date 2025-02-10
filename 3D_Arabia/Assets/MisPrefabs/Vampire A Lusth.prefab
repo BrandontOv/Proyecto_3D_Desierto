@@ -373,7 +373,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 782674518420644033, guid: 4368794ed4b022145bfba92d95cacc91, type: 3}
   visionArea: 5
   visionAtaque: 3
   Vampiro: {fileID: 5398626330680859196}

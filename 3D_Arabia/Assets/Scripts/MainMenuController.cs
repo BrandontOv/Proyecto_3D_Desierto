@@ -12,6 +12,12 @@ public class MainMenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Return)){
+
+            SceneManager.LoadScene("Menu");
+        }
+
+        
         
     }
 
@@ -25,5 +31,9 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("Creditos");
     }
 
+    public void salir(){
 
+        Application.Quit();
+    }
+    
 }

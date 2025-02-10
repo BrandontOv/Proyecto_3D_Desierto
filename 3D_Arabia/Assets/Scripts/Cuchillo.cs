@@ -9,6 +9,9 @@ public class Cuchillo : MonoBehaviour
 {
     [SerializeField] GameObject Vampi;
     [SerializeField] GameObject Coli;
+    [SerializeField] AudioClip golpe;
+
+    AudioSource audioSrc;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,6 +31,7 @@ public class Cuchillo : MonoBehaviour
 
         other.gameObject.GetComponent<AgentControlBackend>().damagevamp();
         Debug.Log("daño hecho");
+
 
         }
     }

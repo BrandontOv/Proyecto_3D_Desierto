@@ -14,6 +14,10 @@ public class ControllerPlayer : MonoBehaviour
     [SerializeField] GameObject item3T;
     [SerializeField] GameObject item4T;
     [SerializeField] GameObject item5T;
+    [SerializeField] GameObject pausa;
+
+    [SerializeField] ThirdPersonController thirdPersonController;
+    
 
     [SerializeField] bool item1;
 
@@ -33,7 +37,10 @@ public class ControllerPlayer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+        Time.timeScale = 1;
+       thirdPersonController = GetComponent<ThirdPersonController>();
+       Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -58,6 +65,16 @@ public class ControllerPlayer : MonoBehaviour
             Invoke("Credit",3);
 
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape)){
+
+            pausa.SetActive(true);
+            Time.timeScale = 0;
+            thirdPersonController.enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    
         
     }
 
